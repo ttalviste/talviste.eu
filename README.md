@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 # Intro
 
-Crated using
+Created using
 `
 npx create-react-app my-app --typescript
 `
