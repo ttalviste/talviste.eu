@@ -1,10 +1,10 @@
-export interface I_globalScss {
+export interface IColorScss {
   textColor: string;
   primaryColor: string;
   secondaryColor: string;
   backgroundColor: string;
 }
 
-export const colors: I_globalScss;
+export const colors: IColorScss;
 
 export default colors;
