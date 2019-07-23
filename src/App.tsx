@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "./logo.svg";
-import "./App.css";
+import "./styles/App.scss";
 import { fontFamily, fontSize, gray2, accent1, gray5, gray1 } from "./Styles";
 
 interface IPost {
@@ -22,6 +22,7 @@ const Container = styled.div`
   font-family: ${fontFamily};
   font-size: ${fontSize};
   color: ${gray2};
+  border: 12px solid ${accent1}
 
   @media (max-width: 400px) {
     width: 100%;
