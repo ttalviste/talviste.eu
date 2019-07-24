@@ -27,7 +27,7 @@ Created using
 
 ### Motivation
 
-I am always reading something and collectiong different notes. Because of that, I have a lot of notes lying around and can not find them when I need them.
+I am always reading something and writing down notes. Because of that, I have a lot of notes lying around and cannot find them when I need them.
 
 So that, I started with this little project to keep track of what I am reading, have read and what thoughts and notes I gathered about them.
 
