@@ -1,18 +1,12 @@
-import React, { FC } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import ReadingListItemComponent from './ReadingListItem';
 import { ReadingItemType } from './ReadingItemType';
-import {
-  fontFamily,
-  fontSize,
-  gray2,
-  accent1,
-  gray5,
-  gray1
-} from '../../Styles';
+import { fontFamily, fontSize, gray2, accent1 } from '../../Styles';
 
-export interface IReadingListProps {
+export type ReadingListProps = {
   items?: ReadingItemType[];
-}
+};
 const Container = styled.div`
   width: 400px;
   margin: 30px auto;
@@ -35,49 +29,24 @@ const List = styled.ul`
   box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.16);
 `;
 
-const ListItem = styled.li`
-  display: flex;
-  flex-direction: column;
-  padding: 10px 0px;
-  border-top: 1px solid ${gray5};
-  :first-child {
-    border-top: none;
-  }
-`;
+const stubItems: ReadingItemType[] = [
+  { id: 1, title: 'One', description: 'This is some sample text' },
+  { id: 2, title: 'Two' },
+  { id: 3, title: 'Three', description: 'This is some sample text' }
+];
 
-interface ITextProps {
-  size?: string;
-}
-const Text = styled.div<ITextProps>`
-  font-family: ${fontFamily};
-  font-size: ${props => props.size || fontSize};
-  color: ${gray2};
-`;
-
-const Title = styled(Text)`
-  font-size: 18px;
-  color: ${gray1};
-  margin-bottom: 5px;
-`;
-const ReadingList: React.FC<IReadingListProps> = props => (
+const ReadingListComponent: React.FC<ReadingListProps> = props => (
   <Container>
     <div>
       <List>
         {props.items &&
-          props.items.map(({ id, title, description }) => (
-            <ListItem key={id}>
-              <Title>{title}</Title>
-              <Text size="14px" as="p">
-                {description}
-              </Text>
-            </ListItem>
-          ))}
+          props.items.map(item => <ReadingListItemComponent {...item} />)}
       </List>
     </div>
   </Container>
 );
-ReadingList.defaultProps = {
-  items: []
+ReadingListComponent.defaultProps = {
+  items: stubItems
 };
 
-export default ReadingList;
+export default ReadingListComponent;

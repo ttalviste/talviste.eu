@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { fontFamily, fontSize, gray2, gray5, gray1 } from '../../Styles';
 import { ReadingItemType } from './ReadingItemType';
 
-export interface IReadingListItemProps extends ReadingItemType {}
+export type ReadingListItemProps = ReadingItemType;
 
 const ListItem = styled.li`
   display: flex;
@@ -15,10 +15,10 @@ const ListItem = styled.li`
   }
 `;
 
-interface ITextProps {
+type TextProps = {
   size?: string;
-}
-const Text = styled.div<ITextProps>`
+};
+const Text = styled.div<TextProps>`
   font-family: ${fontFamily};
   font-size: ${props => props.size || fontSize};
   color: ${gray2};
@@ -29,7 +29,7 @@ const Title = styled(Text)`
   color: ${gray1};
   margin-bottom: 5px;
 `;
-const ReadingListItem: React.FC<IReadingListItemProps> = props => (
+const ReadingListItemComponent: React.FC<ReadingListItemProps> = props => (
   <ListItem key={props.id}>
     <Title>{props.title}</Title>
     <Text size="14px" as="p">
@@ -38,4 +38,4 @@ const ReadingListItem: React.FC<IReadingListItemProps> = props => (
   </ListItem>
 );
 
-export default ReadingListItem;
+export default ReadingListItemComponent;

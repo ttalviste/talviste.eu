@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import ReadingList, { IReadingListProps } from './ReadingList';
+import ReadingList, { ReadingListProps } from './ReadingList';
 import { ReadingItemType } from './ReadingItemType';
 
 const stubItems: ReadingItemType[] = [
@@ -9,7 +9,7 @@ const stubItems: ReadingItemType[] = [
   { id: 3, title: 'Three', description: 'This is some sample text' }
 ];
 
-const props: IReadingListProps = {
+const props: ReadingListProps = {
   items: stubItems
 };
 
