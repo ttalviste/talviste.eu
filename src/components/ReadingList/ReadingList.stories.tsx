@@ -1,7 +1,11 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
-import ReadingList, { ReadingListProps } from './ReadingList';
-import { ReadingItemType } from './ReadingItemType';
+import ReadingList, {
+  ReadingItemType,
+  ReadingListProps,
+  ReadingListItemProps,
+  ReadingListItem
+} from '.';
 
 const stubItems: ReadingItemType[] = [
   { id: 1, title: 'One', description: 'This is some sample text' },
@@ -16,3 +20,20 @@ const props: ReadingListProps = {
 storiesOf('Reading list', module)
   .add('empty list', () => <div>You have nothing in the list!</div>)
   .add('with some items', () => <ReadingList {...props} />);
+
+const itemPropsWithoutDescription: ReadingListItemProps = {
+  id: 1,
+  title: 'One'
+};
+
+const itemProps: ReadingListItemProps = {
+  id: 1,
+  title: 'One',
+  description: 'This is some sample text'
+};
+
+storiesOf('Reading list items', module)
+  .add('without description', () => (
+    <ReadingListItem {...itemPropsWithoutDescription} />
+  ))
+  .add('with description', () => <ReadingListItem {...itemProps} />);
