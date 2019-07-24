@@ -1,8 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import logo from "./logo.svg";
-import "./styles/App.scss";
-import { fontFamily, fontSize, gray2, accent1, gray5, gray1 } from "./Styles";
+import React from 'react';
+import logo from './logo.svg';
+import './styles/App.scss';
 
 const App: React.FC = () => {
   return (

@@ -1,7 +1,14 @@
 import * as React from 'react';
 import { storiesOf } from '@storybook/react';
 import styled from 'styled-components';
-import { fontFamily, fontSize, gray2, accent1, gray5, gray1 } from '../../Styles';
+import {
+  fontFamily,
+  fontSize,
+  gray2,
+  accent1,
+  gray5,
+  gray1
+} from '../../Styles';
 
 interface IReadingItem {
   id: number;
@@ -10,9 +17,9 @@ interface IReadingItem {
 }
 
 const items: IReadingItem[] = [
-  { id: 1, title: "One", body: "This is some sample text" },
-  { id: 2, title: "Two", body: "This is some sample text" },
-  { id: 3, title: "Three", body: "This is some sample text" }
+  { id: 1, title: 'One', body: 'This is some sample text' },
+  { id: 2, title: 'Two', body: 'This is some sample text' },
+  { id: 3, title: 'Three', body: 'This is some sample text' }
 ];
 
 const Container = styled.div`
@@ -62,23 +69,21 @@ const Title = styled(Text)`
   margin-bottom: 5px;
 `;
 
-storiesOf("Reading list", module)
-  .add("empty list", () => (
-    <div>You have nothing in the list!</div>
-  ))
-  .add("with some items", () => (
+storiesOf('Reading list', module)
+  .add('empty list', () => <div>You have nothing in the list!</div>)
+  .add('with some items', () => (
     <Container>
-    <div>
-      <List>
-        {items.map(({ id, title, body }) => (
-          <ListItem key={id}>
-            <Title>{title}</Title>
-            <Text size="14px" as='p'>
-              {body}
-            </Text>
-          </ListItem>
-        ))}
-      </List>
-    </div>
-  </Container>
+      <div>
+        <List>
+          {items.map(({ id, title, body }) => (
+            <ListItem key={id}>
+              <Title>{title}</Title>
+              <Text size="14px" as="p">
+                {body}
+              </Text>
+            </ListItem>
+          ))}
+        </List>
+      </div>
+    </Container>
   ));
